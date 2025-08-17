@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Narragate Film Studio — production, post, and creative storytelling." />
+  <title>Narragate</title>
+
+  <!-- Core styles (mobile-first) -->
+  <link rel="stylesheet" href="/assets/css/_variables.css">
+  <link rel="stylesheet" href="/assets/css/_base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components/header.css">
+  <link rel="stylesheet" href="/assets/css/components/nav.css">
+  <link rel="stylesheet" href="/assets/css/components/footer.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+
+  <script defer src="/assets/js/navigation.js"></script>
+</head>
+<body class="page page--home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="/">Narragate</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open primary navigation">
+        <span class="nav-toggle__box">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary" aria-hidden="true">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="/about.html">About</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="/portfolio.html">Portfolio</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="/services.html">Services</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" role="main" tabindex="-1">
+    <section class="hero hero--large" aria-label="Hero">
+      <div class="container">
+        <h1 class="hero__title">Narragate — cinematic storytelling</h1>
+        <p class="hero__lead">We produce high-end film and content for brands, agencies, and artists.</p>
+      </div>
+    </section>
+
+    <section class="content container">
+      <h2>Featured Work</h2>
+      <p>Placeholder content — implement portfolio grid in EPIC-portfolio-showcase.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <div class="site-footer__item">
+        <p>&copy; <span id="year"></span> Narragate. All rights reserved.</p>
+      </div>
+      <div class="site-footer__item">
+        <nav aria-label="Footer">
+          <ul class="site-footer__list">
+            <li><a href="/privacy.html">Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

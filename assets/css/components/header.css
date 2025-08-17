@@ -1,0 +1,13 @@
+/* Header component styles (BEM) */
+.site-header__brand{font-weight:700;color:var(--color-primary);font-size:1.125rem}
+.site-header__brand:focus{outline-offset:3px}
+
+/* Nav toggle visibility */
+.nav-toggle{background:none;border:0;padding:8px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.nav-toggle__box{display:inline-block;width:28px;height:20px;position:relative}
+.nav-toggle__bar{display:block;height:2px;background:var(--color-primary);margin:4px 0;border-radius:2px}
+
+/* Hide toggle on larger screens */
+@media (min-width: 768px){
+  .nav-toggle{display:none}
+}
