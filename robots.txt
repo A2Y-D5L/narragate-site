@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: /sitemap.xml
+# If using a custom domain, replace the Sitemap URL with the full https://.../sitemap.xml

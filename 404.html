@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page not found</title>
+  <link rel="stylesheet" href="assets/css/_variables.css">
+  <link rel="stylesheet" href="assets/css/_base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+</head>
+<body class="page page--404">
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">Narragate</a>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" role="main">
+    <section class="container">
+      <h1>404 — Page not found</h1>
+      <p>Sorry, the page you requested could not be found.</p>
+      <p><a href="index.html">Return to the homepage</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <p>&copy; <span id="year"></span> Narragate.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

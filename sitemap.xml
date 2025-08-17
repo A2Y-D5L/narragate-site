@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.narragate.com/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/portfolio.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/services/production.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/services/post.html</loc>
+  </url>
+  <url>
+    <loc>https://www.narragate.com/services/creative.html</loc>
+  </url>
+</urlset>

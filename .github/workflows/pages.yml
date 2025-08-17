@@ -1,0 +1,70 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - foundation-nav-system
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (for optional asset optimization)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Optimize assets (optional)
+        run: |
+          echo "Checking for package.json and build script..."
+          if [ -f package.json ]; then
+            echo "package.json found"
+            npm ci || true
+            if npm run | grep -q " build"; then
+              echo "Running npm run build"
+              npm run build || true
+            else
+              echo "No build script defined — attempting in-place minify via npx"
+              # minify CSS
+              if command -v npx >/dev/null 2>&1; then
+                find assets/css -name '*.css' -print0 | xargs -0 -I {} sh -c 'npx clean-css-cli -o "{}" "{}" || true'
+                # minify JS
+                if [ -d assets/js ]; then
+                  find assets/js -name '*.js' -print0 | xargs -0 -I {} sh -c 'npx terser "{}" -c -m -o "{}" || true'
+                fi
+              fi
+            fi
+          else
+            echo "No package.json — attempting in-place minify via npx"
+            if command -v npx >/dev/null 2>&1; then
+              find assets/css -name '*.css' -print0 | xargs -0 -I {} sh -c 'npx clean-css-cli -o "{}" "{}" || true'
+              if [ -d assets/js ]; then
+                find assets/js -name '*.js' -print0 | xargs -0 -I {} sh -c 'npx terser "{}" -c -m -o "{}" || true'
+              fi
+            fi
+          fi
+
+      - name: Disable Jekyll (serve directories beginning with _)
+        run: |
+          touch .nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
