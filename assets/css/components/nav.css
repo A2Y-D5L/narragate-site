@@ -12,3 +12,35 @@
   .site-nav{position:static;transform:none;background:transparent;padding:0}
   .site-nav__list{flex-direction:row;gap:var(--gap-md);align-items:center}
 }
+
+/* Submenu styles */
+.site-nav__item--has-children{position:relative}
+.site-nav__toggle{background:none;border:0;padding:8px;color:var(--color-primary);cursor:pointer;font-weight:600}
+.site-nav__sublist{list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:var(--gap-xs);background:var(--color-white);border-radius:8px;box-shadow:var(--shadow-sm);position:absolute;left:0;top:100%;min-width:220px;transform-origin:top center;transform:translateY(-6px) scaleY(.97);opacity:0;pointer-events:none;transition:transform var(--transition-fast),opacity var(--transition-fast);z-index:95}
+.site-nav__subitem .site-nav__link{padding:8px 12px}
+.site-nav__sublist[aria-hidden="false"],.site-nav__sublist.is-open{transform:translateY(0) scaleY(1);opacity:1;pointer-events:auto}
+
+/* show on hover for desktop */
+@media (min-width:768px){
+  .site-nav__item--has-children:hover .site-nav__sublist{transform:translateY(0) scaleY(1);opacity:1;pointer-events:auto}
+  .site-nav__sublist{position:absolute}
+}
+
+/* mobile: sublist collapsible inside slide-out */
+@media (max-width:767px){
+  .site-nav__sublist{position:static;transform:none;opacity:1;pointer-events:auto;padding-left:var(--gap-sm);display:none}
+  .site-nav__sublist.is-open{display:flex}
+}
+
+/* Active link styling */
+.site-nav__link--active{color:var(--color-accent)}
+
+/* Ensure toggle button looks consistent with links */
+.site-nav__toggle:focus{outline-offset:3px}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  .site-nav{transition:none}
+  .site-nav__sublist{transition:none}
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}
+}

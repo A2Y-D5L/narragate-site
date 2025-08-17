@@ -26,17 +26,27 @@
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open primary navigation">
         <span class="nav-toggle__box">
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
         </span>
       </button>
 
       <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary" aria-hidden="true">
         <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="/">Home</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="/about.html">About</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="/portfolio.html">Portfolio</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="/services.html">Services</a></li>
+
+          <li class="site-nav__item site-nav__item--has-children">
+            <button class="site-nav__link site-nav__toggle" aria-expanded="false" aria-controls="services-submenu" aria-haspopup="true">Services</button>
+            <ul id="services-submenu" class="site-nav__sublist" aria-hidden="true">
+              <li class="site-nav__subitem"><a class="site-nav__link" href="/services/production.html">Production</a></li>
+              <li class="site-nav__subitem"><a class="site-nav__link" href="/services/post.html">Post-production</a></li>
+              <li class="site-nav__subitem"><a class="site-nav__link" href="/services/creative.html">Creative Services</a></li>
+            </ul>
+          </li>
+
           <li class="site-nav__item"><a class="site-nav__link" href="/contact.html">Contact</a></li>
         </ul>
       </nav>
