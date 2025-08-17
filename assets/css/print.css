@@ -1,0 +1,7 @@
+/* Print styles - simplified */
+@media print{
+  body{color:#000;background:#fff}
+  .site-nav,.nav-toggle,.hero{display:none}
+  .container{padding:0}
+  a::after{content: " (" attr(href) ")"}
+}

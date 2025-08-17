@@ -1,0 +1,30 @@
+/* Minimal reset and base typographic rules - mobile first */
+/* Based on Normalize + small reset */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:var(--font-sans);font-size:var(--fs-base);line-height:var(--lh-normal);color:var(--color-primary);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--font-sans)}
+
+/* Utility containers */
+.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 var(--gap-sm)}
+
+/* Skip link */
+.skip-link{position:absolute;left:0;top:0;background:var(--color-primary);color:var(--color-white);padding:8px 12px;transform:translateY(-120%);transition:transform var(--transition-fast);z-index:100}
+.skip-link:focus{transform:translateY(0)}
+.skip-link:not(:focus){clip:rect(0 0 0 0);position:absolute;height:1px;width:1px;overflow:hidden}
+
+/* Headings */
+h1{font-size:2.25rem;margin:0 0 0.5rem;line-height:1.05}
+h2{font-size:1.75rem;margin:1.25rem 0 0.5rem}
+h3{font-size:1.25rem;margin:1rem 0}
+
+/* Accessible focus outline - scoped for interactive controls */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[role="button"]:focus-visible{
+  outline:3px solid var(--color-accent);
+  outline-offset:2px;
+}
+
+/* Page base */
+.page{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
